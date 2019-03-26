@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery Flex Hover Slider Demo</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+.flex-container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: -webkit-flex;
+  /* Safari */
+  display: flex;
+  overflow: hidden;
+}
+@media screen and (max-width: 768px) {
+
+.flex-container { flex-direction: column; }
+}
+
+.flex-title {
+  color: #f1f1f1;
+  position: relative;
+  font-size: 6vw;
+  margin: auto;
+  text-align: center;
+  transform: rotate(90deg);
+  top: 15%;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  white-space: nowrap;
+}
+@media screen and (max-width: 768px) {
+
+.flex-title { transform: rotate(0deg) !important; }
+}
+
+.flex-kl {
+  opacity: 0;
+  color: #f1f1f1;
+  position: relative;
+  width: 70%;
+  font-size: 2vw;
+  padding: 5%;
+  top: 20%;
+  border: 2px solid #8e8e8e;
+  border-radius: 10px;
+  line-height: 1.3;
+  margin: auto;
+  text-align: center;
+  transform: rotate(0deg);
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+@media screen and (max-width: 768px) {
+
+.flex-kl {
+  padding: 0%;
+  border: 0px solid #f1f1f1;
+}
+}
+
+.flex-slide {
+  -webkit-flex: 1;
+  /* Safari 6.1+ */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  cursor: pointer;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+@media screen and (max-width: 768px) {
+
+.flex-slide {
+  overflow: auto;
+  overflow-x: hidden;
+}
+}
+ @media screen and (max-width: 768px) {
+
+.flex-slide p { font-size: 2em; }
+}
+ @media screen and (max-width: 768px) {
+
+.flex-slide ul li { font-size: 2em; }
+}
+
+.flex-slide:hover {
+  -webkit-flex-grow: 3;
+  flex-grow: 3;
+}
+
+.hello {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/UNADJUSTEDNONRAW_thumb_9af.jpg);
+  background-size: cover;
+  background-position: center center;
+  /*background-attachment: fixed;*/
+}
+@media screen and (min-width: 768px) {
+
+.hello {
+  -moz-animation: klFlexSlide;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-delay: 0s;
+  -webkit-animation: klFlexSlide;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 0s;
+  animation: klFlexSlide;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+}
+}
+ @keyframes 
+klFlexSlide {  0% {
+ -webkit-flex-grow: 1;
+ flex-grow: 1;
+}
+ 50% {
+ -webkit-flex-grow: 3;
+ flex-grow: 3;
+}
+ 100% {
+ -webkit-flex-grow: 1;
+ flex-grow: 1;
+}
+}
+@media screen and (min-width: 768px) {
+
+.flex-title-hello {
+  transform: rotate(90deg);
+  top: 15%;
+  -moz-animation: helloFlextitle;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-delay: 0s;
+  -webkit-animation: helloFlextitle;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 0s;
+  animation: helloFlextitle;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+}
+}
+ @keyframes 
+helloFlextitle {  0% {
+ transform: rotate(90deg);
+ top: 15%;
+}
+ 50% {
+ transform: rotate(0deg);
+ top: 15%;
+}
+ 100% {
+ transform: rotate(90deg);
+ top: 15%;
+}
+}
+
+.flex-kl-hello { opacity: 0; }
+@media screen and (min-width: 768px) {
+
+.flex-kl-hello {
+  -moz-animation: flexklhello;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-delay: 0s;
+  -webkit-animation: flexklhello;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 0s;
+  animation: flexklhello;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 0s;
+}
+}
+ @keyframes 
+flexklhello {  0% {
+ opacity: 0;
+}
+ 50% {
+ opacity: 1;
+}
+ 100% {
+ opacity: 0;
+}
+}
+
+.kl {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/IMG_4743.JPG);
+  /*background-size: cover;*/
+  background-position: center center;
+  /*background-attachment: fixed;*/
+}
+
+.contact {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../img/UNADJUSTEDNONRAW_thumb_bb2.jpg);
+  background-size: cover;
+  background-position: 53% 50%;
+  /*background-attachment: fixed;*/
+}
+
+.borneo {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/IMG_3901.JPG);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #222;
+  height: 100%;
+  width: 100%;
+  z-index: 11;
+  margin-top: 0;
+  color: #fff;
+  font-size: 1em;
+}
+
+.cube1, .cube2 {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+ @-webkit-keyframes 
+sk-cubemove {  25% {
+ -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+}
+ 50% {
+ -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+}
+ 75% {
+ -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+}
+ 100% {
+ -webkit-transform: rotate(-360deg);
+}
+}
+@keyframes 
+sk-cubemove {  25% {
+ transform: translateX(42px) rotate(-90deg) scale(0.5);
+ -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+}
+ 50% {
+ transform: translateX(42px) translateY(42px) rotate(-179deg);
+ -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+}
+ 50.1% {
+ transform: translateX(42px) translateY(42px) rotate(-180deg);
+ -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+}
+ 75% {
+ transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+ -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+}
+ 100% {
+ transform: rotate(-360deg);
+ -webkit-transform: rotate(-360deg);
+}
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="flex-container">
+  <div class="spinner">
+    <p>
+    
+    <div class="cube1"></div>
+    <div class="cube2"></div>
+    Loading...
+    </p>
+  </div>
+  <div class="flex-slide hello">
+    <div class="flex-title flex-title-hello">Hello</div>
+    <div class="flex-kl flex-kl-hello">
+      <p>Passing of a quarter of a year in adventurer life!</br>And how to become web developer from flight attendant!</p>
+    </div>
+  </div>
+  <div class="flex-slide kl">
+    <div class="flex-title">KL & IT</div>
+    <div class="flex-kl">
+      <p><img src="https://www.nextacademy.com/img/nav-logo-white.png" style="width: 80%"></p>
+    </div>
+  </div>
+  <div class="flex-slide borneo">
+    <div class="flex-title">Borneo</div>
+    <div class="flex-kl">
+      <ul>
+        <li>Mount Kinabalu</li>
+        <li>Brunei</li>
+        <li>Sipadan</li>
+        <li>Another</li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex-slide contact">
+    <div class="flex-title">Contact</div>
+    <div class="flex-kl">
+      <h3>Rea Furmanová</h3>
+      <p><img src="http://pluspng.com/img-png/email-hd-png-best-hd-mail-icon-transparent-vector-file-free-1969.png" style="width: 6%"> reafurmanova@gmail.com</p>
+      <p><img  src="https://image.flaticon.com/icons/png/512/33/33702.png" style="width: 5%"> Rea Furmanová</p>
+      <p><img src="https://image.flaticon.com/icons/svg/25/25231.svg" style="width: 6%"> ReaFu</p>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/2.2.0/jquery.waitforimages.min.js"></script> 
+<script>
+(function(){
+		$('.flex-container').waitForImages(function() {
+			$('.spinner').fadeOut();
+	}, $.noop, true);
+	
+	$(".flex-slide").each(function(){
+		$(this).hover(function(){
+			$(this).find('.flex-title').css({
+				transform: 'rotate(0deg)',
+				top: '10%'
+			});
+			$(this).find('.flex-kl').css({
+				opacity: '1'
+			});
+		}, function(){
+			$(this).find('.flex-title').css({
+				transform: 'rotate(90deg)',
+				top: '15%'
+			});
+			$(this).find('.flex-kl').css({
+				opacity: '0'
+			});
+		})
+	});
+})();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
